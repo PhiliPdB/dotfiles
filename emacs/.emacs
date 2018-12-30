@@ -9,7 +9,8 @@
 
 (package-initialize)
 
-(setq package-list '(editorconfig
+(setq package-list '(agda2-mode
+		     editorconfig
 		     material-theme
 		     tabbar
 		     ))
@@ -23,8 +24,8 @@
       (package-install package)))
 
 ;; Agda
-(load-file (let ((coding-system-for-read 'utf-8))
-	         (shell-command-to-string "agda-mode locate")))
+;;(load-file (let ((coding-system-for-read 'utf-8))
+;;	         (shell-command-to-string "agda-mode locate")))
 
 
 
