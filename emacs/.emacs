@@ -27,7 +27,9 @@
 ;;(load-file (let ((coding-system-for-read 'utf-8))
 ;;	         (shell-command-to-string "agda-mode locate")))
 
-
+;; Editorconfig
+(require 'editorconfig)
+(editorconfig-mode 1)
 
 ;; Theme
 (load-theme 'material t)
