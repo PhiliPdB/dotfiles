@@ -1,4 +1,8 @@
-alias powershell="powershell.exe"
+
+# Alias for powershell when on WSL
+if [[ $WSL_running == true ]]; then
+	alias powershell="powershell.exe"
+fi
 
 # Color highlighted cat
 alias catc="pygmentize -g"

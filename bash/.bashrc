@@ -35,6 +35,14 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# Check if we are running on WSL
+if cat /proc/version | grep Microsoft > /dev/null; then
+	WSL_running=true
+else
+	WSL_running=false
+fi
+export WSL_running
+
 #
 # Set the ps1
 #
@@ -109,8 +117,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Set the display
-export DISPLAY=:0.0
+# Set the display when on WSL
+if [[ $WSL_running == true ]]; then
+       	export DISPLAY=:0.0
+fi
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
