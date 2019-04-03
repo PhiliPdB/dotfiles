@@ -13,7 +13,6 @@
 		     editorconfig
 		     material-theme
 		     tabbar
-		     wakatime-mode
 		     ))
 
 ;; rm -rf ~/.emacs.d/elpa to reload
