@@ -34,10 +34,6 @@
 ;; Theme
 (load-theme 'material t)
 
-;; Global wakatime mode
-(global-wakatime-mode)
-
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
