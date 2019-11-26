@@ -56,4 +56,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (wakatime-mode agda2-mode tabbar material-theme editorconfig))))
+    (agda2-mode tabbar material-theme editorconfig))))
