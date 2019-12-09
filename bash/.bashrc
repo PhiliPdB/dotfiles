@@ -47,6 +47,9 @@ export WSL_running
 # Set the ps1
 #
 
+# First import script for posh-git
+source ~/dotfiles/bash/git-prompt.sh
+
 # Set some colors
 NORMAL="\[\e[0m\]"
 RED="\[\e[1;31m\]"
@@ -55,7 +58,12 @@ YELLOW="\[\e[1;33m\]"
 BLUE="\[\e[1;34m\]"
 
 # Actually set the PS1
-PS1="$GREEN\u $NORMAL[ $BLUE\w$NORMAL ]$YELLOW\$(__git_ps1)$NORMAL\n$ "
+#PS1="$GREEN\u $NORMAL[ $BLUE\w$NORMAL ]$YELLOW\$(__posh_git_echo)$NORMAL\n$ "
+PS1_PREFIX="$GREEN\u $NORMAL[ $BLUE\w$NORMAL ] "
+PS1_POSTFIX="\n$ "
+
+# Set posh git PS1 and make sure it is run in prompt_command
+PROMPT_COMMAND='__posh_git_ps1 "$PS1_PREFIX" "$PS1_POSTFIX";'$PROMP_COMMAND
 
 unset NORMAL RED GREEN YELLOW BLUE
 
