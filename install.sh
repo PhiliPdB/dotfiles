@@ -22,5 +22,8 @@ ln -s $DIR/emacs/.emacs.d ~/.emacs.d
 
 # ZSH
 rm -f ~/.zshrc
+rm -f ~/.p10k.zsh
 ln -s $DIR/zsh/.zshrc ~/.zshrc
+ln -s $DIR/zsh/.p10k.zsh ~/.p10k.zsh
+
 
