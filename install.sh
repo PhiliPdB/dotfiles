@@ -20,5 +20,7 @@ rm -rf ~/.emacs.d
 ln -s $DIR/emacs/.emacs ~/.emacs
 ln -s $DIR/emacs/.emacs.d ~/.emacs.d
 
-
+# ZSH
+rm -f ~/.zshrc
+ln -s $DIR/zsh/.zshrc ~/.zshrc
 
