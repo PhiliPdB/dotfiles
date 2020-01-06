@@ -48,11 +48,11 @@ export GPG_TTY=$(tty)
 
 # Check if we are running on WSL
 if cat /proc/version | grep Microsoft > /dev/null; then
- 	WSL_running=true
+ 	WSL_RUNNING=true
 else
-	WSL_running=false
+	WSL_RUNNING=false
 fi
-export WSL_running
+export WSL_RUNNING
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -66,8 +66,9 @@ fi
 # Custom aliasses
 
 # Some ls aliasses
-alias ll='ls -alF'
+alias ll='ls -lF'
 alias la='ls -A'
+alias lla='ls -alF'
 alias l='ls -CF'
 
 # Create file and directories if needed
