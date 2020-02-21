@@ -33,6 +33,7 @@ plugins=(
 	git
 	gitignore
 	sudo
+	wd
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 )
