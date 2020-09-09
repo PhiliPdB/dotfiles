@@ -30,8 +30,11 @@ plugins=(
 	cabal
 	colored-man-pages
 	colorize
+	docker
+	docker-compose
 	git
 	gitignore
+	pyenv
 	sudo
 	wd
 	zsh-autosuggestions
@@ -45,10 +48,12 @@ source $ZSH/oh-my-zsh.sh
 # GPG Fix
 export GPG_TTY=$(tty)
 
+# Update path
+export PATH="$PATH:$HOME/.local/bin"
 
 
 # Check if we are running on WSL
-if cat /proc/version | grep Microsoft > /dev/null; then
+if cat /proc/version | grep microsoft > /dev/null; then
  	WSL_RUNNING=true
 else
 	WSL_RUNNING=false
@@ -60,17 +65,21 @@ export WSL_RUNNING
 
 # Set display when on WSL
 if [[ $WSL_RUNNING == true ]]; then
-	export DISPLAY=:0.0
+	export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 fi
 
 
 # Custom aliasses
 
 # Some ls aliasses
+alias ls='lsd'
 alias ll='ls -lF'
 alias la='ls -A'
 alias lla='ls -alF'
 alias l='ls -CF'
+
+# Shortcut to activate virtual env
+alias venv='source ./venv/bin/activate'
 
 # Create file and directories if needed
 mkfile() {
